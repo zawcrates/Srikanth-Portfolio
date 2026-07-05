@@ -1,26 +1,96 @@
 @import "tailwindcss";
 
+
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Design Tokens */
+  --background: #F4F4F4;
+  --surface: #FFFFFF;
+  --text: #111111;
+  --accent: #F65E47;
+  --border: #111111;
+
+  --shadow-offset: 8px;
+
+  --transition-fast: 0.2s;
+  --transition-medium: 0.4s;
+  --transition-slow: 0.8s;
 }
 
-@theme inline {
+@theme {
+  /* Fonts Mapping */
+  --font-sans: var(--font-afacad), sans-serif;
+  --font-afacad: var(--font-afacad);
+  --font-sunroll: var(--font-sunroll);
+
+  /* Colors Mapping */
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-text-main: var(--text);
+  --color-accent-color: var(--accent);
+  --color-border-main: var(--border);
+
+  /* Transitions Mapping */
+  --transition-duration-fast: var(--transition-fast);
+  --transition-duration-medium: var(--transition-medium);
+  --transition-duration-slow: var(--transition-slow);
+
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Global Viewport Reset - Lock scrolling & disable bounce */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  overscroll-behavior: none !important;
+  touch-action: none !important;
+  -webkit-overflow-scrolling: auto;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  position: fixed !important;
+  inset: 0 !important;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: var(--font-afacad), sans-serif;
+}
+
+/* ─── Slide Deck ─────────────────────────────────────────── */
+
+/**
+ * Slide deck container — stacks all slides on top of each other.
+ * overflow: hidden prevents any partial visibility of sibling slides.
+ */
+.slide-deck {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/**
+ * Individual slide — always mounted, hidden when inactive.
+ * Using visibility + pointer-events (NOT display:none) so that:
+ *   • Layout calculations are preserved
+ *   • Component state is preserved
+ *   • No remount flicker occurs
+ *   • Future enhancements can reference slide dimensions
+ *
+ * There are NO opacity, transform, or transition properties here.
+ * Visibility changes are instantaneous.
+ */
+.slide {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.slide.active {
+  visibility: visible;
+  pointer-events: auto;
 }
