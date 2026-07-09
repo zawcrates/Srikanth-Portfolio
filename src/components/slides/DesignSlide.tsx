@@ -74,7 +74,10 @@ export default function DesignSlide() {
                     <span className="font-afacad font-bold text-base text-[var(--text)]">{p.num}</span>
                     <span className="font-afacad font-bold text-sm min-[380px]:text-base text-[var(--text)] truncate max-w-[150px] min-[380px]:max-w-[200px]">{p.title}</span>
                   </div>
-                  <span className="font-afacad text-[10px] text-[var(--text)] opacity-50 truncate max-w-[80px]">{p.tag}</span>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className="font-afacad text-[10px] text-[var(--text)] opacity-50 truncate max-w-[80px]">{p.tag}</span>
+                    <span className="text-[var(--text)] opacity-60 text-xs">↓</span>
+                  </div>
                 </div>
 
                 {/* Inactive View (hidden when group is hovered) — Desktop Layout */}
@@ -95,9 +98,12 @@ export default function DesignSlide() {
                 {/* Active/Hovered View (visible when group is hovered or expanded on mobile) */}
                 <div className={['hidden flex-col h-full w-full justify-between', isExpanded ? 'max-md:flex' : '', 'group-hover:flex'].join(' ')}>
                   <div>
-                    <span className="font-afacad text-xs font-medium text-[var(--text)] opacity-70 leading-none">
-                      {p.tag}
-                    </span>
+                    <div className="flex justify-between items-center w-full">
+                      <span className="font-afacad text-xs font-medium text-[var(--text)] opacity-70 leading-none">
+                        {p.tag}
+                      </span>
+                      <span className="text-[var(--text)] opacity-60 text-xs md:hidden select-none">↑</span>
+                    </div>
                     <h3 className="font-afacad text-lg min-[380px]:text-2xl md:text-3xl font-bold text-[var(--text)] mt-2 md:mt-4 leading-tight">
                       {p.num} {p.title}
                     </h3>
