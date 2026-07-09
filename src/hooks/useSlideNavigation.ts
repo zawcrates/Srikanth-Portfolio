@@ -71,7 +71,6 @@ export function useSlideNavigation() {
   // Mouse wheel / trackpad
   useEffect(() => {
     const handler = (e: WheelEvent) => {
-      if (window.innerWidth < 768) return;
       e.preventDefault();
       if (Math.abs(e.deltaY) < WHEEL_THRESHOLD) return;
       if (e.deltaY > 0) goNext();
@@ -84,7 +83,6 @@ export function useSlideNavigation() {
   // Keyboard: arrows + PageUp/Down
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (window.innerWidth < 768) return;
       if (['ArrowDown', 'PageDown'].includes(e.key)) {
         e.preventDefault();
         goNext();
@@ -103,7 +101,6 @@ export function useSlideNavigation() {
       touchStartY.current = e.touches[0].clientY;
     };
     const onEnd = (e: TouchEvent) => {
-      if (window.innerWidth < 768) return;
       const dy = touchStartY.current - e.changedTouches[0].clientY;
       if (Math.abs(dy) > 50) {
         if (dy > 0) {
