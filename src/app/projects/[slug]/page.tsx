@@ -311,7 +311,7 @@ export default function ProjectPage({ params }: PageProps) {
       {/* Vertically scrollable content area wrapper */}
       <main className="w-full px-4 md:px-12 lg:px-20 py-8 md:py-12 flex flex-col gap-8 md:gap-12">
         {/* Single Big Box containing everything */}
-        <div className="w-full border-2 border-[var(--text)] shadow-[8px_8px_0px_0px_var(--text)] bg-[var(--surface)] p-4 sm:p-6 md:p-10 flex flex-col gap-6 md:gap-8">
+        <div className="w-full max-w-[480px] mx-auto md:max-w-none border-2 border-[var(--text)] shadow-[8px_8px_0px_0px_var(--text)] bg-[var(--surface)] p-4 sm:p-6 md:p-10 flex flex-col gap-6 md:gap-8">
           
           {/* Project Title & Tag */}
           <div className="flex flex-col md:flex-row md:justify-between md:items-start border-b border-[var(--text)] pb-4 gap-4">
@@ -354,7 +354,7 @@ export default function ProjectPage({ params }: PageProps) {
               {project.images.map((imgSrc, index) => (
                 <div 
                   key={index}
-                  className="border-2 border-[var(--text)] shadow-[6px_6px_0px_0px_var(--text)] bg-[var(--background)] p-3 overflow-hidden flex justify-center items-center cursor-zoom-in hover:translate-y-[-2px] transition-transform duration-200"
+                  className="border-2 border-[var(--text)] shadow-[6px_6px_0px_0px_var(--text)] bg-[var(--background)] p-2 md:p-3 overflow-hidden flex justify-center items-center cursor-zoom-in hover:translate-y-[-2px] transition-transform duration-200"
                   onClick={() => setSelectedImage(imgSrc)}
                 >
                   <img 
@@ -367,7 +367,7 @@ export default function ProjectPage({ params }: PageProps) {
             </div>
           ) : (
             <div 
-              className="border-2 border-[var(--text)] shadow-[6px_6px_0px_0px_var(--text)] bg-[var(--background)] p-3 overflow-hidden flex justify-center items-center my-4 cursor-zoom-in hover:translate-y-[-2px] transition-transform duration-200"
+              className="border-2 border-[var(--text)] shadow-[6px_6px_0px_0px_var(--text)] bg-[var(--background)] p-2 md:p-3 overflow-hidden flex justify-center items-center my-4 cursor-zoom-in hover:translate-y-[-2px] transition-transform duration-200"
               onClick={() => setSelectedImage(project.image)}
             >
               <img 
