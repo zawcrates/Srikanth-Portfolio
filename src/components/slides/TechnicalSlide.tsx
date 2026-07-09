@@ -62,9 +62,9 @@ export default function TechnicalSlide() {
                 key={p.num}
                 onClick={() => setExpandedIndex(isExpanded ? null : i)}
                 className={[
-                  'relative flex-1 hover:flex-[5] md:hover:flex-[4] flex flex-col justify-between py-3 px-4 md:p-6 group cursor-pointer',
+                  'relative flex-1 hover:flex-[5] md:hover:flex-[4] flex flex-col md:justify-between py-3 px-4 md:p-6 group cursor-pointer',
                   'hover:bg-[var(--accent)] transition-all duration-300 ease-out',
-                  isExpanded ? 'max-md:flex-[5] max-md:bg-[var(--accent)]' : '',
+                  isExpanded ? 'max-md:flex-[5] max-md:bg-[var(--accent)] max-md:justify-between' : 'max-md:justify-center',
                   i < PROJECTS.length - 1 ? 'border-b-2 md:border-b-0 md:border-r-2 border-[var(--text)]' : '',
                 ].join(' ')}
               >
@@ -72,12 +72,9 @@ export default function TechnicalSlide() {
                 <div className={['flex items-center justify-between w-full md:hidden py-1', isExpanded ? 'hidden' : 'group-hover:hidden'].join(' ')}>
                   <div className="flex items-center gap-3">
                     <span className="font-afacad font-bold text-base text-[var(--text)]">{p.num}</span>
-                    <span className="font-afacad font-bold text-sm min-[380px]:text-base text-[var(--text)] truncate max-w-[150px] min-[380px]:max-w-[200px]">{p.title}</span>
+                    <span className="font-afacad font-bold text-sm min-[380px]:text-base text-[var(--text)] truncate max-w-[200px] min-[380px]:max-w-[260px]">{p.title}</span>
                   </div>
-                  <div className="flex items-center gap-2 shrink-0">
-                    <span className="font-afacad text-[10px] text-[var(--text)] opacity-50 truncate max-w-[80px]">{p.tag}</span>
-                    <span className="text-[var(--text)] opacity-60 text-xs">↓</span>
-                  </div>
+                  <span className="text-[var(--text)] opacity-60 text-xs shrink-0 select-none">↓</span>
                 </div>
 
                 {/* Inactive View (hidden when group is hovered) — Desktop Layout */}
