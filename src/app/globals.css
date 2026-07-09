@@ -59,6 +59,20 @@ body {
   font-family: var(--font-afacad), sans-serif;
 }
 
+/* Enable scrolling and touch events on project pages */
+body.scrollable-body {
+  position: static !important;
+  overflow: auto !important;
+  height: auto !important;
+  touch-action: auto !important;
+}
+
+html:has(body.scrollable-body) {
+  overflow: auto !important;
+  height: auto !important;
+  touch-action: auto !important;
+}
+
 /* ─── Slide Deck ─────────────────────────────────────────── */
 
 /**
@@ -71,6 +85,13 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+
+@media (max-width: 767px) {
+  .slide-deck {
+    padding-top: 0 !important;
+  }
+}
+
 
 /**
  * Individual slide — always mounted, hidden when inactive.
@@ -88,6 +109,15 @@ body {
   inset: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .slide {
+    left: 20px !important;
+    left: calc(20px + env(safe-area-inset-left)) !important;
+    right: env(safe-area-inset-right) !important;
+    bottom: env(safe-area-inset-bottom) !important;
+  }
 }
 
 .slide.active {

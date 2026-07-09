@@ -2,14 +2,14 @@
 export default function HomeSlide() {
   return (
     <div className="w-full h-full flex flex-col overflow-hidden bg-[var(--background)]">
-      <div className="flex-1 w-full flex flex-col justify-start px-6 md:px-12 lg:px-20 pt-[60px] md:pt-[80px] xl:pt-[100px] pb-6 select-none overflow-hidden">
+      <div className="flex-1 w-full flex flex-col justify-start px-6 md:px-12 lg:px-20 pt-[98px] md:pt-[80px] xl:pt-[100px] pb-6 select-none overflow-hidden">
 
         {/* Header row: Name + Subtitle */}
         <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center w-full shrink-0 pt-2">
-          <h1 className="font-sunroll text-[var(--text)] font-normal tracking-normal text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[96px] leading-none pt-4">
+          <h1 className="font-sunroll text-[var(--text)] font-normal tracking-normal text-[38px] min-[380px]:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[96px] leading-none pt-4">
             SRIKANTH K
           </h1>
-          <div className="font-afacad text-[var(--text)] font-normal text-left md:text-right whitespace-pre-line pt-2 mt-3 md:mt-0 text-xl sm:text-2xl md:text-3xl xl:text-[32px] leading-tight max-w-[549px]">
+          <div className="font-afacad text-[var(--text)] font-normal text-left md:text-right whitespace-pre-line pt-2 mt-3 md:mt-0 text-lg min-[380px]:text-xl sm:text-2xl md:text-3xl xl:text-[32px] leading-tight max-w-[549px]">
             {"AIML Student\n& Product Designer"}
           </div>
         </div>

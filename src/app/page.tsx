@@ -12,14 +12,16 @@ import PageIndicator   from '@/components/PageIndicator';
 const TOTAL_SLIDES = 4;
 
 export default function Home() {
-  const { currentSlide, goTo, goNext, goPrev } = useSlideNavigation();
+  const { currentSlide, goTo } = useSlideNavigation();
 
   return (
     <>
-      {/* ── Persistent top accent bar ─────────────────────────── */}
+      {/* ── Persistent top/left accent bar ─────────────────────────── */}
       <div
-        style={{ position: 'fixed', top: 0, left: 0, right: 0, height: '20px', zIndex: 60 }}
-        className="bg-[var(--accent)] border-b-2 border-[var(--text)]"
+        style={{ position: 'fixed', zIndex: 60 }}
+        className="bg-[var(--accent)] border-[var(--text)]
+                   top-0 left-0 bottom-0 w-5 border-r-2
+                   md:right-0 md:bottom-auto md:w-auto md:h-5 md:border-r-0 md:border-b-2"
       />
 
       {/* ── Slide deck ──────────────────────────────────────────── */}
@@ -29,7 +31,7 @@ export default function Home() {
         No display:none, no opacity transitions, no transforms.
         Slide changes are instantaneous.
       */}
-      <div className="slide-deck" style={{ paddingTop: '20px' }}>
+      <div className="slide-deck">
 
         <div className={`slide${currentSlide === 0 ? ' active' : ''}`}>
           <HomeSlide />
@@ -58,11 +60,12 @@ export default function Home() {
       {currentSlide === 0 && (
         <Link
           href="/projects"
-          style={{ position: 'fixed', bottom: '64px', left: '120px', zIndex: 50 }}
+          style={{ position: 'fixed', zIndex: 50 }}
           className="bg-[var(--accent)] border-2 border-[var(--text)] shadow-[6px_6px_0px_0px_var(--text)]
                      py-2 px-5 font-afacad text-base md:text-lg font-bold text-[var(--text)]
                      text-center whitespace-nowrap select-none block
-                     hover:translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200"
+                     hover:translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200
+                     bottom-[114px] md:bottom-16 left-[44px] md:left-[120px]"
         >
           Projects →
         </Link>

@@ -29,6 +29,7 @@ export function useSlideNavigation() {
   // Read initial slide from URL hash on mount
   useEffect(() => {
     const idx = hashToIndex(window.location.hash);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCurrentSlide(idx);
     slideRef.current = idx;
     // Ensure hash is always present in URL
@@ -102,7 +103,11 @@ export function useSlideNavigation() {
     const onEnd = (e: TouchEvent) => {
       const dy = touchStartY.current - e.changedTouches[0].clientY;
       if (Math.abs(dy) > 50) {
-        dy > 0 ? goNext() : goPrev();
+        if (dy > 0) {
+          goNext();
+        } else {
+          goPrev();
+        }
       }
     };
     window.addEventListener('touchstart', onStart, { passive: true });

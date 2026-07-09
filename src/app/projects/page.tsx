@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 
 const TECH_PROJECTS = [
@@ -143,26 +144,33 @@ const DESIGN_PROJECTS = [
 ];
 
 export default function ProjectsPage() {
+  useEffect(() => {
+    document.body.classList.add('scrollable-body');
+    return () => {
+      document.body.classList.remove('scrollable-body');
+    };
+  }, []);
+
   return (
     <div className="w-screen h-screen overflow-y-auto bg-[var(--background)] flex flex-col select-none scroll-smooth">
       {/* Sticky top accent bar */}
       <div className="sticky top-0 left-0 right-0 h-5 bg-[var(--accent)] border-b-2 border-[var(--text)] z-30 shrink-0" />
 
       {/* Header Container */}
-      <header className="px-6 md:px-12 lg:px-20 py-8 border-b-2 border-[var(--text)] flex justify-between items-center bg-[var(--background)] shrink-0">
+      <header className="px-4 md:px-12 lg:px-20 py-4 md:py-8 border-b-2 border-[var(--text)] flex justify-between items-center bg-[var(--background)] shrink-0">
         <Link 
           href="/" 
-          className="bg-[var(--accent)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] py-2 px-5 font-afacad text-base md:text-lg font-bold text-[var(--text)] hover:-translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200"
+          className="bg-[var(--accent)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] py-1 px-3 md:py-2 md:px-5 font-afacad text-xs md:text-lg font-bold text-[var(--text)] hover:-translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200"
         >
           ← Back to Portfolio
         </Link>
-        <h1 className="font-sunroll text-3xl md:text-4xl lg:text-5xl text-[var(--text)] leading-none">
+        <h1 className="font-sunroll text-base min-[360px]:text-lg min-[400px]:text-2xl md:text-4xl lg:text-5xl text-[var(--text)] leading-none">
           ALL PROJECTS
         </h1>
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 w-full max-w-[1200px] mx-auto px-6 md:px-12 lg:px-20 py-12 flex flex-col gap-20">
+      <main className="flex-1 w-full max-w-[1200px] mx-auto px-4 md:px-12 lg:px-20 py-8 md:py-12 flex flex-col gap-12 md:gap-20">
         
         {/* Design Projects Section */}
         <section id="design" className="flex flex-col gap-10">
@@ -174,7 +182,7 @@ export default function ProjectsPage() {
               <div 
                 key={`design-${proj.num}`} 
                 id={`design-${proj.num}`}
-                className="bg-[var(--surface)] border-2 border-[var(--text)] shadow-[8px_8px_0px_0px_var(--text)] p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start"
+                className="bg-[var(--surface)] border-2 border-[var(--text)] shadow-[8px_8px_0px_0px_var(--text)] p-4 sm:p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start"
               >
                 {/* Project Number */}
                 <div className="font-sunroll text-4xl md:text-5xl text-[var(--accent)] shrink-0 leading-none">
@@ -228,7 +236,7 @@ export default function ProjectsPage() {
               <div 
                 key={`tech-${proj.num}`} 
                 id={`tech-${proj.num}`}
-                className="bg-[var(--surface)] border-2 border-[var(--text)] shadow-[8px_8px_0px_0px_var(--text)] p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start"
+                className="bg-[var(--surface)] border-2 border-[var(--text)] shadow-[8px_8px_0px_0px_var(--text)] p-4 sm:p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start"
               >
                 {/* Project Number */}
                 <div className="font-sunroll text-4xl md:text-5xl text-[var(--accent)] shrink-0 leading-none">

@@ -15,7 +15,7 @@ interface PageIndicatorProps {
 export default function PageIndicator({ currentSlide, total, goTo }: PageIndicatorProps) {
   return (
     <div
-      style={{ position: 'fixed', bottom: '16px', left: '50%', transform: 'translateX(-50%)', zIndex: 50 }}
+      style={{ position: 'fixed', bottom: 'calc(16px + env(safe-area-inset-bottom))', left: '50%', transform: 'translateX(-50%)', zIndex: 50 }}
       className="flex items-center gap-[5px] bg-[var(--text)] rounded-full px-3 py-[5px] select-none"
     >
       {Array.from({ length: total }).map((_, i) => (

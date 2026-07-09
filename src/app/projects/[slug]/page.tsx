@@ -235,6 +235,13 @@ export default function ProjectPage({ params }: PageProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
+    document.body.classList.add('scrollable-body');
+    return () => {
+      document.body.classList.remove('scrollable-body');
+    };
+  }, []);
+
+  useEffect(() => {
     if (selectedImage) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -278,35 +285,35 @@ export default function ProjectPage({ params }: PageProps) {
       <div className="h-5 bg-[var(--accent)] border-b-2 border-[var(--text)] shrink-0" />
 
       {/* Header Container */}
-      <header className="px-6 md:px-12 lg:px-20 py-6 border-b-2 border-[var(--text)] flex justify-between items-center bg-[var(--background)] shrink-0">
+      <header className="px-4 md:px-12 lg:px-20 py-4 md:py-6 border-b-2 border-[var(--text)] flex justify-between items-center bg-[var(--background)] shrink-0">
         <Link 
           href={project.backLink}
-          className="bg-[var(--accent)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] py-2 px-5 font-afacad text-base md:text-lg font-bold text-[var(--text)] hover:-translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200"
+          className="bg-[var(--accent)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] py-1 px-3 md:py-2 md:px-5 font-afacad text-xs md:text-lg font-bold text-[var(--text)] hover:-translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200"
         >
           ← Back to Portfolio
         </Link>
-        <span className="font-afacad text-sm font-bold text-[var(--accent)] uppercase tracking-widest bg-[var(--surface)] border-2 border-[var(--text)] px-4 py-1.5 rounded-full">
+        <span className="font-afacad text-[10px] md:text-sm font-bold text-[var(--accent)] uppercase tracking-widest bg-[var(--surface)] border-2 border-[var(--text)] px-2.5 py-1 md:px-4 md:py-1.5 rounded-full self-auto">
           {project.category}
         </span>
       </header>
 
       {/* Vertically scrollable content area wrapper */}
-      <main className="w-full px-6 md:px-12 lg:px-20 py-12 flex flex-col gap-12">
+      <main className="w-full px-4 md:px-12 lg:px-20 py-8 md:py-12 flex flex-col gap-8 md:gap-12">
         {/* Single Big Box containing everything */}
-        <div className="w-full border-2 border-[var(--text)] shadow-[8px_8px_0px_0px_var(--text)] bg-[var(--surface)] p-8 md:p-10 flex flex-col gap-8">
+        <div className="w-full border-2 border-[var(--text)] shadow-[8px_8px_0px_0px_var(--text)] bg-[var(--surface)] p-4 sm:p-6 md:p-10 flex flex-col gap-6 md:gap-8">
           
           {/* Project Title & Tag */}
-          <div className="flex justify-between items-start border-b border-[var(--text)] pb-4">
-            <h1 className="font-sunroll text-4xl md:text-5xl lg:text-6xl text-[var(--text)] leading-none pt-2">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-start border-b border-[var(--text)] pb-4 gap-4">
+            <h1 className="font-sunroll text-3xl min-[380px]:text-4xl md:text-5xl lg:text-6xl text-[var(--text)] leading-none pt-2">
               {project.num} {project.title}
             </h1>
-            <span className="bg-[var(--accent)] border border-[var(--text)] px-4 py-1.5 font-afacad text-base font-bold text-[var(--text)] rounded-full shrink-0">
+            <span className="bg-[var(--accent)] border border-[var(--text)] px-3 py-1 md:px-4 md:py-1.5 font-afacad text-sm md:text-base font-bold text-[var(--text)] rounded-full shrink-0 self-start md:self-auto">
               {project.tag}
             </span>
           </div>
 
           {/* Project Description */}
-          <p className="font-afacad text-lg md:text-xl text-[var(--text)] font-semibold leading-relaxed opacity-95">
+          <p className="font-afacad text-base min-[380px]:text-lg md:text-xl text-[var(--text)] font-semibold leading-relaxed opacity-95">
             {project.desc}
           </p>
 
@@ -332,7 +339,7 @@ export default function ProjectPage({ params }: PageProps) {
 
           {/* Image Showcase - Added AFTER the Solution */}
           {project.images && project.images.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 my-4">
               {project.images.map((imgSrc, index) => (
                 <div 
                   key={index}
@@ -362,7 +369,7 @@ export default function ProjectPage({ params }: PageProps) {
 
           {/* Impact Box */}
           {project.impact && (
-            <div className="bg-[var(--accent)] border-2 border-[var(--text)] p-5 shadow-[4px_4px_0px_0px_var(--text)]">
+            <div className="bg-[var(--accent)] border-2 border-[var(--text)] p-4 md:p-5 shadow-[4px_4px_0px_0px_var(--text)]">
               <h3 className="font-afacad text-sm font-bold text-[var(--text)] uppercase tracking-wider mb-2">
                 Impact & Results
               </h3>
@@ -374,7 +381,7 @@ export default function ProjectPage({ params }: PageProps) {
 
           {/* Live Link Button */}
           {project.liveLink && (
-            <div className="bg-[var(--accent)] border-2 border-[var(--text)] p-6 shadow-[6px_6px_0px_0px_var(--text)] flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div className="bg-[var(--accent)] border-2 border-[var(--text)] p-4 md:p-6 shadow-[6px_6px_0px_0px_var(--text)] flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
               <div>
                 <h3 className="font-afacad text-lg font-bold text-[var(--text)] uppercase tracking-wider">
                   Experience the project
@@ -387,7 +394,7 @@ export default function ProjectPage({ params }: PageProps) {
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[var(--background)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] py-2.5 px-6 font-afacad text-base font-bold text-[var(--text)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200 shrink-0"
+                className="bg-[var(--background)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] py-2 px-4 md:py-2.5 md:px-6 font-afacad text-sm md:text-base font-bold text-[var(--text)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200 shrink-0 w-full md:w-auto text-center"
               >
                 View Live Website →
               </a>
