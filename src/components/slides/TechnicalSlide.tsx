@@ -95,9 +95,10 @@ export default function TechnicalSlide() {
                 <div className={['hidden flex-col h-full w-full justify-between', isExpanded ? 'max-md:flex' : '', 'group-hover:flex'].join(' ')}>
                   <div>
                     <div className="flex justify-between items-center w-full">
-                      <span className="font-afacad text-xs font-medium text-[var(--text)] opacity-70 leading-none">
+                      <span className="hidden md:inline-block font-afacad text-xs font-medium text-[var(--text)] opacity-70 leading-none">
                         {p.tag}
                       </span>
+                      <span className="md:hidden" />
                       <span className="text-[var(--text)] opacity-60 text-xs md:hidden select-none">↑</span>
                     </div>
                     <h3 className="font-afacad text-lg min-[380px]:text-2xl md:text-3xl font-bold text-[var(--text)] mt-2 md:mt-4 leading-tight">
