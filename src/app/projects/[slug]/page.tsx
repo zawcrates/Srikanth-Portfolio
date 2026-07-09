@@ -275,7 +275,7 @@ export default function ProjectPage({ params }: PageProps) {
     };
   }, [selectedImage, project?.images]);
 
-  if (!project) {
+  if (!project || (slug !== 'photography-studio-portfolio' && slug !== 'digital-invitation-marketplace')) {
     notFound();
   }
 

@@ -213,12 +213,18 @@ export default function ProjectsPage() {
                     </ul>
                   </div>
                   <div className="flex justify-end mt-4">
-                    <Link
-                      href={`/projects/${proj.slug}`}
-                      className="bg-[var(--accent)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] py-1.5 px-4 font-afacad text-sm font-bold text-[var(--text)] hover:translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200"
-                    >
-                      Case Study →
-                    </Link>
+                    {proj.slug === 'photography-studio-portfolio' || proj.slug === 'digital-invitation-marketplace' ? (
+                      <Link
+                        href={`/projects/${proj.slug}`}
+                        className="bg-[var(--accent)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] py-1.5 px-4 font-afacad text-sm font-bold text-[var(--text)] hover:translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200"
+                      >
+                        Case Study →
+                      </Link>
+                    ) : (
+                      <span className="inline-block bg-[var(--surface)] border-2 border-[var(--text)] border-dashed opacity-50 py-1.5 px-4 font-afacad text-sm font-bold text-[var(--text)] select-none">
+                        In Progress
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -267,12 +273,9 @@ export default function ProjectsPage() {
                     </ul>
                   </div>
                   <div className="flex justify-end mt-4">
-                    <Link
-                      href={`/projects/${proj.slug}`}
-                      className="bg-[var(--accent)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] py-1.5 px-4 font-afacad text-sm font-bold text-[var(--text)] hover:translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200"
-                    >
-                      Case Study →
-                    </Link>
+                    <span className="inline-block bg-[var(--surface)] border-2 border-[var(--text)] border-dashed opacity-50 py-1.5 px-4 font-afacad text-sm font-bold text-[var(--text)] select-none">
+                      In Progress
+                    </span>
                   </div>
                 </div>
               </div>

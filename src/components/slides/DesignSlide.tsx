@@ -109,13 +109,19 @@ export default function DesignSlide() {
                     </p>
                   </div>
                   <div className="mt-4 md:mt-6">
-                    <Link 
-                      href={`/projects/${p.slug}`} 
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-block bg-[var(--background)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] py-1 md:py-1.5 px-3 md:px-4 font-afacad text-xs md:text-sm font-bold text-[var(--text)] hover:translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200"
-                    >
-                      Case Study →
-                    </Link>
+                    {p.slug === 'photography-studio-portfolio' || p.slug === 'digital-invitation-marketplace' ? (
+                      <Link 
+                        href={`/projects/${p.slug}`} 
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-block bg-[var(--background)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] py-1 md:py-1.5 px-3 md:px-4 font-afacad text-xs md:text-sm font-bold text-[var(--text)] hover:translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200"
+                      >
+                        Case Study →
+                      </Link>
+                    ) : (
+                      <span className="inline-block bg-[var(--background)] border-2 border-[var(--text)] border-dashed opacity-50 py-1 md:py-1.5 px-3 md:px-4 font-afacad text-xs md:text-sm font-bold text-[var(--text)] select-none">
+                        In Progress
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
