@@ -304,7 +304,7 @@ export default function ProjectPage({ params }: PageProps) {
           
           {/* Project Title & Tag */}
           <div className="flex flex-col md:flex-row md:justify-between md:items-start border-b border-[var(--text)] pb-4 gap-4">
-            <h1 className="font-sunroll text-3xl min-[380px]:text-4xl md:text-5xl lg:text-6xl text-[var(--text)] leading-none pt-2">
+            <h1 className="font-sunroll text-xl min-[380px]:text-2xl md:text-5xl lg:text-6xl text-[var(--text)] leading-none pt-2">
               {project.num} {project.title}
             </h1>
             <span className="bg-[var(--accent)] border border-[var(--text)] px-3 py-1 md:px-4 md:py-1.5 font-afacad text-sm md:text-base font-bold text-[var(--text)] rounded-full shrink-0 self-start md:self-auto">
