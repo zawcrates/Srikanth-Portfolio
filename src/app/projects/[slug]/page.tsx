@@ -168,22 +168,33 @@ const ALL_PROJECTS: Record<string, ProjectDetail> = {
       'Smooth Scroll Experience'
     ]
   },
-  'web-design': {
+  'startup-landing-page': {
     num: '03',
     category: 'Design Projects',
-    title: 'Web Design',
-    tag: 'Layout · Visual',
+    title: 'Startup Landing Page',
+    tag: 'UI/UX Design · SaaS Platform',
     backLink: '/#design',
-    image: '/images/design-mockup.png',
-    desc: 'Responsive, editorial-style website layouts created for digital portfolios and creative agencies, balancing strong layouts with micro-interactions.',
-    challenge: 'Standard portfolio websites look identical, lacking a unique creative identity or the interactivity required to engage visitors effectively.',
-    solution: 'Developed an asymmetric, high-contrast visual grid based on classic print design rules, combined with responsive layout frameworks and subtle micro-interactions.',
-    impact: 'Doubled visitor average session durations and increased click-through rates to contact forms.',
+    image: '/design project/D3.0.png',
+    images: [
+      '/design project/D3.0.png',
+      '/design project/D3.1.png',
+      '/design project/D3.2.png',
+      '/design project/D3.3.png',
+      '/design project/D3.4.png'
+    ],
+    desc: 'Designed a clear SaaS landing page with strong visual hierarchy and structured content flow, helping visitors quickly understand the product, benefits, and business value.',
+    challenge: "Investors and potential stakeholders often have limited time to evaluate early-stage startups. The challenge was to design a landing page that communicates DiagnoX's value proposition, technology, and business impact within seconds—allowing visitors to understand what the startup does without requiring a detailed explanation or product demo.",
+    solution: "Designed a clear and conversion-focused landing page that simplifies complex AI and predictive maintenance concepts through strong visual hierarchy, concise messaging, and structured content flow. The experience enables investors and customers to quickly grasp the product, its benefits, and its market potential from the very first interaction.",
+    liveLink: 'https://www.diagnox.xyz/',
     features: [
-      'Asymmetric visual grid layouts',
-      'Responsive web layouts for mobile & desktop',
-      'Custom web interactive elements',
-      'Performant animation integration'
+      'Investor-Focused Messaging',
+      'Clear Value Proposition',
+      'AI-Powered Diagnostics',
+      'Predictive Maintenance',
+      'Fleet Intelligence',
+      'Conversion-Focused UX',
+      'Information Architecture',
+      'Responsive Design'
     ]
   },
   'landing-pages': {
@@ -275,7 +286,7 @@ export default function ProjectPage({ params }: PageProps) {
     };
   }, [selectedImage, project?.images]);
 
-  if (!project || (slug !== 'photography-studio-portfolio' && slug !== 'digital-invitation-marketplace')) {
+  if (!project || (slug !== 'photography-studio-portfolio' && slug !== 'digital-invitation-marketplace' && slug !== 'startup-landing-page')) {
     notFound();
   }
 

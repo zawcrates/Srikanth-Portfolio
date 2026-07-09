@@ -19,10 +19,10 @@ const PROJECTS = [
   },
   {
     num: '03',
-    title: 'Web Design',
-    tag: 'Layout · Visual',
-    desc: 'Responsive editorial layout designs balancing bold typography and structured whitespace.',
-    slug: 'web-design',
+    title: 'Startup Landing Page',
+    tag: 'UI/UX Design · SaaS Platform',
+    desc: 'Designed a clear SaaS landing page with strong visual hierarchy and structured content flow, helping visitors quickly understand the product.',
+    slug: 'startup-landing-page',
   },
   {
     num: '04',
@@ -109,7 +109,7 @@ export default function DesignSlide() {
                     </p>
                   </div>
                   <div className="mt-4 md:mt-6">
-                    {p.slug === 'photography-studio-portfolio' || p.slug === 'digital-invitation-marketplace' ? (
+                    {p.slug === 'photography-studio-portfolio' || p.slug === 'digital-invitation-marketplace' || p.slug === 'startup-landing-page' ? (
                       <Link 
                         href={`/projects/${p.slug}`} 
                         onClick={(e) => e.stopPropagation()}

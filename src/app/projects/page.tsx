@@ -104,15 +104,19 @@ const DESIGN_PROJECTS = [
   },
   {
     num: '03',
-    title: 'Web Design',
-    tag: 'Layout · Visual',
-    slug: 'web-design',
-    desc: 'Responsive, editorial-style website layouts created for digital portfolios and creative agencies, balancing strong layouts with micro-interactions.',
+    title: 'Startup Landing Page',
+    tag: 'UI/UX Design · SaaS Platform',
+    slug: 'startup-landing-page',
+    desc: 'Designed a clear SaaS landing page with strong visual hierarchy and structured content flow, helping visitors quickly understand the product, benefits, and business value.',
     features: [
-      'Asymmetric visual grid layouts',
-      'Responsive web layouts for mobile & desktop',
-      'Custom web interactive elements',
-      'Performant animation integration'
+      'Investor-Focused Messaging',
+      'Clear Value Proposition',
+      'AI-Powered Diagnostics',
+      'Predictive Maintenance',
+      'Fleet Intelligence',
+      'Conversion-Focused UX',
+      'Information Architecture',
+      'Responsive Design'
     ]
   },
   {
@@ -213,7 +217,7 @@ export default function ProjectsPage() {
                     </ul>
                   </div>
                   <div className="flex justify-end mt-4">
-                    {proj.slug === 'photography-studio-portfolio' || proj.slug === 'digital-invitation-marketplace' ? (
+                    {proj.slug === 'photography-studio-portfolio' || proj.slug === 'digital-invitation-marketplace' || proj.slug === 'startup-landing-page' ? (
                       <Link
                         href={`/projects/${proj.slug}`}
                         className="bg-[var(--accent)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] py-1.5 px-4 font-afacad text-sm font-bold text-[var(--text)] hover:translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200"
