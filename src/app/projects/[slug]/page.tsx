@@ -436,7 +436,7 @@ export default function ProjectPage({ params }: PageProps) {
           {/* Left Navigation Arrow */}
           {project.images && project.images.length > 1 && (
             <button 
-              className="fixed left-4 md:left-8 top-1/2 -translate-y-1/2 bg-[var(--accent)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] text-[var(--text)] font-bold w-12 h-12 flex items-center justify-center hover:translate-y-[calc(-50%+2px)] hover:translate-x-0.5 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-100 z-[110] text-2xl select-none pointer-events-auto"
+              className="fixed bottom-8 left-8 md:left-8 md:top-1/2 md:bottom-auto md:-translate-y-1/2 bg-[var(--accent)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] text-[var(--text)] font-bold w-12 h-12 flex items-center justify-center hover:translate-y-[2px] md:hover:translate-y-[calc(-50%+2px)] hover:translate-x-0.5 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-100 z-[110] text-2xl select-none pointer-events-auto"
               onClick={(e) => {
                 e.stopPropagation();
                 const currentIndex = project.images!.indexOf(selectedImage);
@@ -451,7 +451,7 @@ export default function ProjectPage({ params }: PageProps) {
           {/* Right Navigation Arrow */}
           {project.images && project.images.length > 1 && (
             <button 
-              className="fixed right-4 md:right-8 top-1/2 -translate-y-1/2 bg-[var(--accent)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] text-[var(--text)] font-bold w-12 h-12 flex items-center justify-center hover:translate-y-[calc(-50%+2px)] hover:translate-x-0.5 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-100 z-[110] text-2xl select-none pointer-events-auto"
+              className="fixed bottom-8 right-8 md:right-8 md:top-1/2 md:bottom-auto md:-translate-y-1/2 bg-[var(--accent)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] text-[var(--text)] font-bold w-12 h-12 flex items-center justify-center hover:translate-y-[2px] md:hover:translate-y-[calc(-50%+2px)] hover:translate-x-0.5 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-100 z-[110] text-2xl select-none pointer-events-auto"
               onClick={(e) => {
                 e.stopPropagation();
                 const currentIndex = project.images!.indexOf(selectedImage);
