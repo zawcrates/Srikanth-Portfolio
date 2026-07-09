@@ -64,8 +64,9 @@ export default function Home() {
           className="bg-[var(--accent)] border-2 border-[var(--text)] shadow-[6px_6px_0px_0px_var(--text)]
                      py-2 px-5 font-afacad text-base md:text-lg font-bold text-[var(--text)]
                      text-center whitespace-nowrap select-none block
-                     hover:translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200
-                     bottom-[114px] md:bottom-16 left-[44px] md:left-[120px]"
+                     hover:translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)]
+                     active:translate-x-[6px] active:translate-y-[6px] active:shadow-none
+                     transition-all duration-200 bottom-[114px] md:bottom-16 left-[44px] md:left-[120px]"
         >
           Projects →
         </Link>

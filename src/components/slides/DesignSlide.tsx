@@ -114,7 +114,7 @@ export default function DesignSlide() {
                       <Link 
                         href={`/projects/${p.slug}`} 
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-block bg-[var(--background)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] py-1 md:py-1.5 px-3 md:px-4 font-afacad text-xs md:text-sm font-bold text-[var(--text)] hover:translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200"
+                        className="inline-block bg-[var(--background)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] py-1 md:py-1.5 px-3 md:px-4 font-afacad text-xs md:text-sm font-bold text-[var(--text)] hover:translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all duration-200"
                       >
                         Case Study →
                       </Link>

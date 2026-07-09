@@ -220,7 +220,7 @@ export default function ProjectsPage() {
                     {proj.slug === 'photography-studio-portfolio' || proj.slug === 'digital-invitation-marketplace' || proj.slug === 'startup-landing-page' ? (
                       <Link
                         href={`/projects/${proj.slug}`}
-                        className="bg-[var(--accent)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] py-1.5 px-4 font-afacad text-sm font-bold text-[var(--text)] hover:translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200"
+                        className="bg-[var(--accent)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] py-1.5 px-4 font-afacad text-sm font-bold text-[var(--text)] hover:translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all duration-200"
                       >
                         Case Study →
                       </Link>
