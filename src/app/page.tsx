@@ -12,7 +12,7 @@ import PageIndicator   from '@/components/PageIndicator';
 const TOTAL_SLIDES = 4;
 
 export default function Home() {
-  const { currentSlide, goTo } = useSlideNavigation();
+  const { currentSlide, goTo, goNext, goPrev } = useSlideNavigation();
 
   return (
     <>
@@ -65,11 +65,32 @@ export default function Home() {
                      py-2 px-5 font-afacad text-base md:text-lg font-bold text-[var(--text)]
                      text-center whitespace-nowrap select-none block
                      hover:translate-x-1 hover:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200
-                     bottom-[114px] md:bottom-16 left-[44px] md:left-[120px]"
+                     bottom-[104px] md:bottom-16 left-[44px] md:left-[120px]"
         >
           Projects →
         </Link>
       )}
+
+      {/* Mobile-only Arrow Navigation Buttons */}
+      <div 
+        style={{ position: 'fixed', zIndex: 50 }}
+        className="flex gap-2 bottom-[104px] right-[44px] md:hidden"
+      >
+        <button
+          onClick={goPrev}
+          className="bg-[var(--accent)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] w-10 h-10 flex items-center justify-center font-bold text-lg text-[var(--text)] hover:translate-y-[-2px] active:translate-y-0 active:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200"
+          aria-label="Previous Slide"
+        >
+          ↑
+        </button>
+        <button
+          onClick={goNext}
+          className="bg-[var(--accent)] border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_var(--text)] w-10 h-10 flex items-center justify-center font-bold text-lg text-[var(--text)] hover:translate-y-[-2px] active:translate-y-0 active:shadow-[2px_2px_0px_0px_var(--text)] transition-all duration-200"
+          aria-label="Next Slide"
+        >
+          ↓
+        </button>
+      </div>
 
       {/* Pagination indicator — updates instantly, no animation */}
       <PageIndicator currentSlide={currentSlide} total={TOTAL_SLIDES} goTo={goTo} />
