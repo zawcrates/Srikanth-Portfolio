@@ -54,7 +54,7 @@ export default function DesignSlide() {
         </h2>
 
         {/* Exhibition card frame */}
-        <div className="h-[420px] min-[400px]:h-[480px] md:h-[460px] xl:h-[520px] w-full max-w-[800px] md:max-w-[950px] xl:max-w-[1200px] mx-auto border-2 border-[var(--text)] shadow-[8px_8px_0px_0px_var(--text)] flex flex-col md:flex-row overflow-hidden">
+        <div className="h-[480px] min-[400px]:h-[540px] md:h-[460px] xl:h-[520px] w-full max-w-[800px] md:max-w-[950px] xl:max-w-[1200px] mx-auto border-2 border-[var(--text)] shadow-[8px_8px_0px_0px_var(--text)] flex flex-col md:flex-row overflow-hidden">
           {PROJECTS.map((p, i) => {
             const isExpanded = expandedIndex === i;
             return (
